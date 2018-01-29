@@ -11,7 +11,7 @@ from datetime import datetime
 def pretty_print(symbol, price, change_24h, change_1d, change_7d):
     """Formats the padding of the returned message"""
     # add the heading
-    grid = '{:3}:    {:<10}-->  {:^6}/{:^6}/{:^6}\n'.format(symbol, price, change_24h, change_1d, change_7d)
+    grid = '{:3}:    {:>8}  -->  {:^6} {:^7} {:^6}\n'.format(symbol, price, change_24h, change_1d, change_7d)
 
     return grid
 
@@ -25,8 +25,8 @@ def get_response(num_result=5, curr="EUR"):
     api_url = f"https://api.coinmarketcap.com/v1/ticker/?convert={curr}&limit={num_result}"
 
     date = datetime.now().strftime("%d-%m-%y at %H:%M")
-    coin_message += f'Data fetched from *coinmarketcap.com* on {date}\n'    # edit format
-    coin_message += 'SYMBOL    PRICE         1h(%)  24h(%)  7d(%)\n'
+    coin_message += f'Data fetched from *coinmarketcap.com* on {date}\n'
+    coin_message += 'SYMBOL  PRICE(€)        1h(%)  24h(%)  7d(%)\n'
     res = requests.get(api_url)
     if res.ok:
         price_data = json.loads(res.content)
