@@ -1,2 +1,2 @@
-# my-telegram-bot
-Settings and functions of a bot that i use for quick notification
+# telegram-bot
+A small telegram bot that i use for quick notification
