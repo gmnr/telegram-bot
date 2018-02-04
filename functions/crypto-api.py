@@ -40,4 +40,6 @@ def get_response(num_result=5, curr="EUR"):
 
     return coin_message
 
-print(get_response())
+if __name__ == "__main__":
+    user_input = int(input("Select how many results you want to show\n>> "))
+    print(get_response(user_input))
