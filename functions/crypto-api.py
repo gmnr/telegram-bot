@@ -22,7 +22,7 @@ def get_response(num_result=5, curr="EUR"):
     # the message that will be sent by the bot
     coin_message = ""
 
-    api_url = f"https://api.coinmarketcap.com/v1/ticker/?convert={curr}&limit={num_result}"
+    api_url = "https://api.coinmarketcap.com/v1/ticker/?convert={}&limit={}".format(curr, num_result)
 
     date = datetime.now().strftime("%d-%m-%y at %H:%M")
     coin_message += f'Data fetched from *coinmarketcap.com* on {date}\n'
