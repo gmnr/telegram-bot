@@ -29,7 +29,7 @@ def get_response(num_result=5, curr="EUR"):
     coin_message += 'SYMBOL  PRICE(€)        1h(%)  24h(%)  7d(%)\n'
     res = requests.get(api_url)
     if res.ok:
-        price_data = json.loads(res.content)
+        price_data = json.loads(res.text)
     else:
         res.raise_for_status()
 
