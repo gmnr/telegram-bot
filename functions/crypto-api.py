@@ -25,7 +25,7 @@ def get_response(num_result=5, curr="EUR"):
     api_url = "https://api.coinmarketcap.com/v1/ticker/?convert={}&limit={}".format(curr, num_result)
 
     date = datetime.now().strftime("%d-%m-%y at %H:%M")
-    coin_message += f'Data fetched from *coinmarketcap.com* on {date}\n'
+    coin_message += 'Data fetched from *coinmarketcap.com* on {date}\n'
     coin_message += 'SYMBOL  PRICE(€)        1h(%)  24h(%)  7d(%)\n'
     res = requests.get(api_url)
     if res.ok:
